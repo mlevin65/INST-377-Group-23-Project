@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Inspection</title>
+    <link rel="stylesheet" href="InspectionStyles.css">
+</head>
+<body>
+    <div class="inspection-container">
+        <h1>Vehicle Inspection</h1>
+
+        <!-- Vehicle Information Section -->
+        <div class="vehicle-info">
+            <h2>Vehicle #12345</h2>
+            <p><strong>Mileage:</strong> 45,000 miles</p>
+            <p><strong>Status:</strong> <span class="status working">Working</span></p>
+            <h3>Maintenance History</h3>
+            <ul>
+                <li>Oil change - 40,000 miles</li>
+                <li>Tire replacement - 35,000 miles</li>
+                <li>Brake pad replacement - 30,000 miles</li>
+            </ul>
+            <h3>Inspection Manual</h3>
+            <a href="manual.pdf" target="_blank">Download Manual</a>
+        </div>
+
+        <!-- Inspection Form Section -->
+        <div class="inspection-form">
+            <h2>Inspection Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="vehicle-type">Vehicle Type</label>
+                    <select id="vehicle-type" name="vehicle-type">
+                        <option value="car">Car</option>
+                        <option value="truck">Truck</option>
+                        <option value="motorcycle">Motorcycle</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic Fields Section -->
+                <div id="dynamic-fields">
+                    <h3>General Inspection</h3>
+                    <div class="form-group">
+                        <label><input type="checkbox" name="brakes" value="checked"> Brakes</label>
+                        <label><input type="checkbox" name="lights" value="checked"> Lights</label>
+                        <label><input type="checkbox" name="tires" value="checked"> Tires</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="faults">Faults Observed</label>
+                        <textarea id="faults" name="faults" rows="4" placeholder="Describe any faults..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mission-readiness">Mission Readiness</label>
+                        <select id="mission-readiness" name="mission-readiness">
+                            <option value="ready">Ready</option>
+                            <option value="not-ready">Not Ready</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Inspection</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
