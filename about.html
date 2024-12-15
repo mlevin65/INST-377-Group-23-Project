@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Vehicle Inspection System</title>
+    <link rel="stylesheet" href="InspectionStyles.css">
+    <style>
+        /* Custom styles specific to the About Page */
+        .about-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+        }
+
+        .about-container h1, .about-container h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .about-container p, .about-container ul {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .about-container a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .about-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Carousel styles */
+        #carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <h1>About the Vehicle Inspection System</h1>
+        <p>This project aims to automate the equipment inspection and maintenance process for the 1100th TASMG MD Army National Guard Unit. The system replaces manual paper-based processes with a streamlined web application, ensuring vehicles are mission-ready efficiently and effectively.</p>
+
+        <h2>Carousel of Features</h2>
+        <!-- Images Carousel -->
+        <div id="carousel" class="slider">
+            <div class="slider-wrapper">
+                <div class="slider-slide"><img src="vehicle_image1.png" alt="Feature 1"></div>
+                <div class="slider-slide"><img src="vehicle_image2.png" alt="Feature 2"></div>
+                <div class="slider-slide"><img src="vehicle_image3.png" alt="Feature 3"></div>
+                <div class="slider-slide"><img src="vehicle_image4.png" alt="Feature 4"></div>
+            </div>
+            <button class="prev" id="prev-btn">&#8249;</button>
+            <button class="next" id="next-btn">&#8250;</button>
+        </div>
+        <h2>Problem Statement</h2>
+        <p>Currently, vehicle inspection and maintenance processes rely on outdated paper forms, causing inefficiencies and delays in fleet dispatch. This web application automates the process, enabling soldiers to input inspection data quickly and update vehicle statuses in real-time.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li>Login System: Secure user authentication with role-based permissions using <strong>Auth0</strong>.</li>
+            <li>Dashboard: Overview of all vehicles with status indicators (e.g., mission-ready, under inspection).</li>
+            <li>Inspection Forms: Dynamic fields based on vehicle type, enabling detailed fault documentation and maintenance tracking.</li>
+            <li>Integration: APIs such as Google Drive for document storage, Google Calendar for scheduling, and IP Stack for location-based access control.</li>
+        </ul>
+
+        <h2>Stakeholders</h2>
+        <p>The primary users are the soldiers, drivers, mechanics, and supply sergeants of the 1100th TASMG MD Army National Guard Unit. This application aims to simplify their workflow and improve fleet readiness.</p>
+
+        <h2>Technology Stack</h2>
+        <ul>
+            <li>Frontend: HTML, CSS, JavaScript (with potential use of libraries like React).</li>
+            <li>Backend: JavaScript for API development.</li>
+            <li>Database: To store and manage user roles, vehicle inspection records, and work order data.</li>
+            <li>APIs: Google Drive, Google Calendar, Auth0, and IP Stack.</li>
+        </ul>
+
+        <h2>Meet the Team</h2>
+        <ul>
+            <li>Adharsh Maheswaran</li>
+            <li>Ben Lintjewas</li>
+            <li>Miles Levine</li>
+        </ul>
+
+        <p><a href="index.html">Return to the Home Page</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-slider@1.0.0/dist/simpleslider.min.js"></script>
+    <script>
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const slides = document.querySelectorAll(".slider-slide");
+            document.querySelector(".slider-wrapper").style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            const slides = document.querySelectorAll(".slider-slide");
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            const slides = document.querySelectorAll(".slider-slide");
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        document.getElementById("next-btn").addEventListener("click", nextSlide);
+        document.getElementById("prev-btn").addEventListener("click", prevSlide);
+    </script>
+</body>
+</html>
