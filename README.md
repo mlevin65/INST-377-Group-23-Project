@@ -20,5 +20,53 @@ The application is designed to work seamlessly across the following platforms:
 - **Android**: Latest versions of Chrome and Samsung Internet.
 - **Desktop Browsers**: Modern versions of Chrome, Edge, and Firefox.
 
-## Link to Developer Manual
-The detailed Developer Manual will be available upon deployment of the project.
+## Developer Manual
+
+## Introduction
+This manual provides the necessary steps to set up, run, and maintain the **IP Logger and Web Application System**. The system includes:
+- A frontend served via Live Server for user interactions.
+- A backend Node.js server to log IP addresses and provide REST API functionality.
+- Integration with the IPStack API for geolocation services.
+
+The document is intended for developers taking over this system.
+
+---
+
+### System Setup
+
+### Dependencies
+Ensure the following dependencies are installed:
+- **Node.js** (v18.x or higher)
+  - Includes npm (Node Package Manager).
+- **Live Server** extension for VS Code (for serving static files).
+
+### Installation
+1. Clone the repository:
+   git clone <repository-url>
+
+Install Node.js dependencies:
+  npm install
+Insure the following files exist in the root directory:
+server.js: Backend server script.
+ip_logs.txt: Log file for IP data (automatically created if missing).
+
+### Running the Application
+Backend Server
+  Start the backend server:
+    node server.js
+
+### Verify the server is running:
+You should see:
+    Server running on http://localhost:3000
+
+Frontend Application
+  Open GroupProject.html in VS Code.
+  Start Live Server:
+  Right-click GroupProject.html and select Open with Live Server.
+
+Ip addresses from a user will be listed in “ip_logs.txt” every time a user opens the website.
+
+
+
+
+   
