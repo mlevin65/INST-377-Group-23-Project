@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="GroupProject.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="login-container" id="content">
         <h2>Login</h2>
         <form action="vehicles.html" method="GET">
             <div class="form-group">
@@ -21,8 +21,56 @@
             <button type="submit" class="login-button">Login</button>
         </form>
         <p>Don't have an account? <a href="#">Sign up</a></p>
-        <p><a href="about.html">Learn more about this project on the About Page</a></p>
 
+        <!-- Display user's location -->
+        <div id="location-info">
+            <h3>Your Location</h3>
+            <p id="location-details">Fetching location...</p>
+        </div>
+
+        <p><a href="about.html">Learn more about this project on the About Page</a></p>
     </div>
+
+    <script>
+        const apiKey = "64e901479765dabe428f665e512fcb94";
+        const apiUrl = `http://api.ipstack.com/check?access_key=${apiKey}`;
+
+        async function fetchLocation() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch location data");
+                }
+                const data = await response.json();
+                checkAuthorization(data);
+            } catch (error) {
+                console.error("Error fetching location:", error);
+                document.getElementById("location-details").textContent = "Unable to fetch location.";
+                showUnauthorizedMessage();
+            }
+        }
+
+        function checkAuthorization(data) {
+            if (data && data.country_code === "US") {
+                // User is authorized
+                const locationInfo = `${data.city}, ${data.region_name}, ${data.country_name}`;
+                document.getElementById("location-details").textContent = locationInfo;
+            } else {
+                // User is unauthorized
+                showUnauthorizedMessage();
+            }
+        }
+
+        function showUnauthorizedMessage() {
+            document.getElementById("content").innerHTML = `
+                <h1>Unauthorized Access</h1>
+                <p>You are not authorized to access this application from your current location.</p>
+            `;
+        }
+
+        // Fetch and check the location on page load
+        fetchLocation();
+
+    </script>
 </body>
 </html>
