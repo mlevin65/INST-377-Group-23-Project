@@ -65,7 +65,8 @@ Frontend Application
   Right-click GroupProject.html and select Open with Live Server.
 
 Ip addresses from a user will be listed in “ip_logs.txt” every time a user opens the website.
-
+## Known Bugs and Limitations
+For whatever reason, the ipstack API is unable to trace Vercel's location data so when a user attempts to log in they will be unauthorized since they are not located in America. We went ahead and developed a work around only for this demo to redirect unauthrized users to contiue to the login page.
 
 
 
