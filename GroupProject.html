@@ -35,9 +35,15 @@
         const apiKey = "64e901479765dabe428f665e512fcb94";
         const apiUrl = `http://api.ipstack.com/check?access_key=${apiKey}`;
 
-        // Fetch and check user's location
-        async function fetchLocation() {
+         // Function to fetch user's location
+         async function fetchLocation() {
             try {
+                const params = new URLSearchParams(window.location.search);
+                if (params.get("bypass") === "true") {
+                    // Skip location check if "bypass" parameter is in the URL
+                    return;
+                }
+
                 const response = await fetch(apiUrl);
                 if (!response.ok) {
                     throw new Error("Failed to fetch location data");
@@ -66,7 +72,7 @@
                 <h1>Unauthorized Access</h1>
                 <p>You are not authorized to access this application from your current location.</p>
                 <p>For demo purposes, you may proceed to the login page below:</p>
-                <a href="GroupProject.html" style="text-decoration: none; color: blue; font-size: 18px;">
+                <a href="GroupProject.html?bypass=true" style="text-decoration: none; color: blue; font-size: 18px;">
                     Go to Login Page
                 </a>
             `;
