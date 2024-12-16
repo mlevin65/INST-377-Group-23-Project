@@ -14,8 +14,74 @@ h1 {
     color: #444;
     font-size: 2.5rem;
 }
+/* Swiper Container: Centered and Resized */
+.swiper-container {
+    display: flex; /* Align content horizontally */
+    align-items: center; /* Align arrows and image vertically */
+    width: 100%; /* Full-width container */
+    max-width: 800px; /* Limit container width for responsiveness */
+    height: 400px; /* Fixed height for images */
+    margin: 20px auto; /* Center horizontally */
+    position: relative; /* For absolute positioning of arrows */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    overflow: hidden;
+}
 
+/* Center Images and Make Them Fill the Container */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.slider-image {
+    width: 75%; /* Fill the container's width */
+    height: 75%; /* Fill the container's height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Position Navigation Arrows */
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Offset for perfect vertical alignment */
+    z-index: 10; /* Ensure arrows appear above the image */
+    font-size: 2rem; /* Adjust arrow size */
+    color: #444; /* Arrow color */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-prev {
+    left: -40px; /* Position left of the container */
+}
+
+.swiper-button-next {
+    right: -40px; /* Position right of the container */
+}
+
+/* Hover Effects for Arrows */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: rgba(255, 255, 255, 1); /* Brighten background on hover */
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Pagination Styling */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px; /* Place below the image */
+    width: 100%;
+    text-align: center;
+    z-in
+}
 
 /* Vehicles Grid */
 .vehicles-container {
