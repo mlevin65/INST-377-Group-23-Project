@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Inspection</title>
     <link rel="stylesheet" href="InspectionStyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="supabase-setup.js"></script>
+
 </head>
 <body>
     <div class="inspection-container">
@@ -26,9 +29,9 @@
         </div>
 
         <!-- Inspection Form Section -->
-        <div class="inspection-form">
+        <div class="inspectionform">
             <h2>Inspection Form</h2>
-            <form>
+            <form id="inspection-form">
                 <div class="form-group">
                     <label for="vehicle-type">Vehicle Type</label>
                     <select id="vehicle-type" name="vehicle-type">
