@@ -104,3 +104,20 @@ button.submit-button {
 button.submit-button:hover {
     background-color: #0056b3;
 }
+button.fetch-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.fetch-button:hover {
+    background-color: #0056b3;
+}
+
