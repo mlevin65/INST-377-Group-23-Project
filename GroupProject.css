@@ -1,63 +1,61 @@
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    background-color: #2d2d2d; /* Dark military green */
+    background-image: url('camouflage-pattern.jpg'); /* Optional background */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fdfdfd; /* Bright white text for high contrast */
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
+/* Login Container */
 .login-container {
-    background: #ffffff;
+    background: rgba(0, 0, 0, 0.85); /* Darker semi-transparent overlay */
     padding: 20px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    color: #fdfdfd; /* Bright font */
 }
+
 .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Stencila', sans-serif; /* Military-style font */
+    color: #ffdd44; /* Gold-like color for headings */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Shadow for visibility */
 }
-.form-group {
-    margin-bottom: 15px;
-}
+
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+    color: #ffdd44;
     font-weight: bold;
 }
+
 .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+    background-color: #444; /* Dark input background */
+    color: #fff; /* Bright input text */
+    border: 1px solid #888;
 }
-.form-group input:focus {
-    border-color: #007bff;
-    outline: none;
-}
+
+/* Login Button */
 .login-button {
-    background-color: #007bff;
-    color: white;
+    background-color: #556b2f; /* Olive green */
+    color: #fdfdfd; /* Bright text */
+    font-family: 'Stencila', sans-serif;
+    font-size: 16px;
     padding: 10px;
     border: none;
     border-radius: 5px;
     width: 100%;
-    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
+
 .login-button:hover {
-    background-color: #0056b3;
-}
-.login-container p {
-    text-align: center;
-    margin-top: 15px;
-}
-.login-container a {
-    color: #007bff;
-    text-decoration: none;
-}
-.login-container a:hover {
-    text-decoration: underline;
+    background-color: #6b8e23; /* Lighter olive */
 }
